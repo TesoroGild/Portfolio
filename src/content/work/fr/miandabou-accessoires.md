@@ -64,4 +64,14 @@ Miandabou est une plateforme e-commerce full-stack conçue pour démontrer une m
 - **DevOps & Déploiement** : Orchestration d'un environnement distribué avec Vercel (Frontend), Render (Backend API) et Neon (Base de données PostgreSQL Serverless), tout en isolant la couche de données via Docker pour le développement.
 
 ### Notes
+> 🔴 **Initialisation des services**
+> Cette application est hébergée sur des infrastructures **Serverless** (Vercel, Render et Neon). Pour optimiser les ressources, ces services entrent en "veille" après une période d'inactivité.
+> 
+> Lors du premier accès, un **"Cold Start"** d'environ 60 secondes peut survenir le temps de :
+> 1. Provisionner les containers d'exécution (Vercel/Render).
+> 2. Réactiver l'instance de la base de données PostgreSQL (Neon).
+> 3. Charger les dépendances et initialiser le runtime.
+>
+> Une fois réveillée, l'application répond instantanément. Merci de votre patience !
+
 - **Flux de transaction simulé** : Afin de privilégier le développement de la logique métier (calculs de prix, gestion des taxes et génération de factures PDF), l'étape de paiement utilise un environnement de test (Mock Payment). Le système valide la structure des données sans traiter de transactions réelles, évitant ainsi des contraintes de conformité inutiles pour un prototype de portfolio.
