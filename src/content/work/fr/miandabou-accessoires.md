@@ -64,14 +64,17 @@ Miandabou est une plateforme e-commerce full-stack conçue pour démontrer une m
 - **DevOps & Déploiement** : Orchestration d'un environnement distribué avec Vercel (Frontend), Render (Backend API) et Neon (Base de données PostgreSQL Serverless), tout en isolant la couche de données via Docker pour le développement.
 
 ### Notes
-> 🔴 **Initialisation des services**
-> Cette application est hébergée sur des infrastructures **Serverless** (Vercel, Render et Neon). Pour optimiser les ressources, ces services entrent en "veille" après une période d'inactivité.
-> 
-> Lors du premier accès, un **"Cold Start"** d'environ 60 secondes peut survenir le temps de :
-> 1. Provisionner les containers d'exécution (Vercel/Render).
-> 2. Réactiver l'instance de la base de données PostgreSQL (Neon).
-> 3. Charger les dépendances et initialiser le runtime.
->
-> Une fois réveillée, l'application répond instantanément. Merci de votre patience !
+<div style="color: #e53e3e; font-weight: 500; font-size: 0.9em; line-height: 1.5; border-left: 2px solid #e53e3e; padding-left: 15px; margin: 20px 0;">
+  🔴 <strong>Initialisation des services</strong><br/>
+  Cette application est hébergée sur des infrastructures <strong>Serverless</strong> (Vercel, Render et Neon). Pour optimiser les ressources, ces services entrent en "veille" après une période d'inactivité.<br/><br/>
+  Lors du premier accès, un <strong>"Cold Start"</strong> d'environ 60 secondes peut survenir le temps de :
+  <ul style="margin: 5px 0;">
+    <li>1. Provisionner les containers d'exécution (Vercel/Render).</li>
+    <li>2. Réactiver l'instance de la base de données PostgreSQL (Neon).</li>
+    <li>3. Charger les dépendances et initialiser le runtime.</li>
+  </ul><br/>
+  Une fois réveillée, l'application répond instantanément. Merci de votre patience !
+</div>
+
 
 - **Flux de transaction simulé** : Afin de privilégier le développement de la logique métier (calculs de prix, gestion des taxes et génération de factures PDF), l'étape de paiement utilise un environnement de test (Mock Payment). Le système valide la structure des données sans traiter de transactions réelles, évitant ainsi des contraintes de conformité inutiles pour un prototype de portfolio.
